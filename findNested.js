@@ -15,12 +15,13 @@ db.film.find({"year":{$gt:2016}}).pretty()
 //}
 //)
 
+
 db.film.aggregate(
 [
 {
 	$group:{
 		_id:'$year',
-		total: {sum:1}
+		total: {$sum:1}
 	}
 }
 ]
